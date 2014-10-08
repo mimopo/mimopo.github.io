@@ -1,0 +1,5 @@
+<li class="{% if page.url == include.url %}active{%endif%}">
+    <a href="{{ include.url | remove: "index.html" | prepend: site.baseurl }}">
+        {{ include.label }}
+    </a>
+</li>

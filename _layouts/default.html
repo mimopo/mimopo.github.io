@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+    {% include head.html %}
+
+    <body>
+        <div class="body">
+
+            {% include header.html %}
+
+            <div class="main" role="main">
+                <div class="container">
+
+                    <div class="oldbrowser-container">
+                        <!--[if lt IE 8]>
+                            <div class="oldbrowser jumbotron">
+                                <h1>¡Hora de actualizarse!</h1>
+                                <p>
+                                    Estás utilizando un navegador antiguo. Te recomiendo que dediques unos minutos a actualizarlo.
+                                    <a href="http://whatbrowser.org/">
+                                        Pulsa aquí para obtener más información.
+                                    </a>
+                                </p>
+                                <a href="http://youtu.be/mM6OIlreneA?t=30s">
+                                    <img src="//dl.dropboxusercontent.com/u/1430056/web/oldbrowser.png" width="1020" height="460" alt="" class="img-responsive">
+                                </a>
+                            </div>
+                        <![endif]-->
+                    </div>
+
+                    {{ content }}
+                </div>
+            </div>
+
+            {% include footer.html %}
+            {% include {{ page.foot }} %}
+
+        </div>
+    </body>
+</html>

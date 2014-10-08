@@ -1,0 +1,7 @@
+{% include nav-item.html url="/index.html" label="Blog" %}
+{% assign pages = site.pages | where:include.visibility,true | sort: 'order' %}
+{% for p in pages %}
+    {% if p.title %}
+        {% include nav-item.html url=p.url label=p.title %}
+    {% endif %}
+{% endfor %}

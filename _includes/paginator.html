@@ -1,0 +1,55 @@
+{% if paginator.total_pages > 1 %}
+    <div class="text-center">
+        <ul class="pagination">
+            <!-- PREVIOUS -->
+            {% if paginator.previous_page %}
+                <li>
+                    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" title="Anterior" class="tooltip-toggle">
+                        <span class="fa fa-angle-left"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="disabled">
+                    <span class="fa fa-angle-left"></span>
+                </li>
+            {% endif %}
+            <!-- /PREVIOUS -->
+            <!-- PAGES -->
+            {% for page in (1..paginator.total_pages) %}
+                {% if page == paginator.page %}
+                    <li class="active">
+                        <span class="active">{{ page }}</span>
+                    </li>
+                {% elsif page == 1 %}
+                    <li>
+                        <a href="{{ '/' | prepend: site.baseurl }}" title="Ir a la página {{ page}}" class="tooltip-toggle">
+                            {{ page }}
+                        </a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{{ site.paginate_path | prepend: site.baseurl | replace: ':num', page }}" title="Ir a la página {{ page}}" class="tooltip-toggle">
+                            {{ page }}
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+            <!-- /PAGES -->
+            <!-- NEXT -->
+            {% if paginator.next_page %}
+                <li>
+                    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" title="Siguiente" class="tooltip-toggle">
+                        <span class="fa fa-angle-right"></span>
+                        <span class="sr-only">Siguiente</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="disabled">
+                    <span class="fa fa-angle-right"></span>
+                </li>
+            {% endif %}
+            <!-- /NEXT -->
+        </ul>
+    </div>
+{% endif %}

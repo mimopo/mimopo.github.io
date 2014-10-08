@@ -1,0 +1,6 @@
+{
+    "dependencies": {
+        "less": "*",
+        "bower": "*"
+    }
+}

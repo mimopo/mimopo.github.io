@@ -1,0 +1,30 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Miguel Montes Porras -- Developer -- @mimopoweb -- http://mimopo.es
+
+
+# THANKS
+
+    Jose Antonio Casal Carmona -- Logo design -- @mosterland83 -- http://www.mosterland.com
+
+
+# TECHNOLOGY COLOPHON
+
+    LESS -- http://lesscss.org/
+    Jekyll -- http://jekyllrb.com/
+    Github Pages -- https://pages.github.com/
+    Initializr -- http://www.initializr.com/
+    Modernizr -- http://modernizr.com/
+    jQuery -- http://jquery.com/
+    jQuery Cookie -- https://github.com/carhartl/jquery-cookie
+    ZeroClipboard -- http://zeroclipboard.org/
+    Mustache -- http://mustache.github.io/
+    Bootstrap -- http://getbootstrap.com/
+    Font Awesome -- http://fortawesome.github.io/Font-Awesome/
+    Github Activity -- https://github.com/caseyscarborough/github-activity
+    Google Analytics -- http://www.google.com/analytics/
+    Google Custom Search -- https://developers.google.com/custom-search/
+    Disqus -- https://disqus.com/

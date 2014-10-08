@@ -1,0 +1,65 @@
+# Github (Not configurable)
+safe: true
+lsi: false
+
+# Site variables
+title: mimopo.es
+description: "Recopilación de recetas, chuletas y herramientas orientadas al desarrollo de software."
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://mimopo.es" # the base hostname & protocol for your site
+domain: "mimopo.es"
+twitter_username: mimopoweb
+github_username:  mimopo
+linkedin_username: mimopo
+analytics_id: UA-54792215-1
+
+# Front Matter defaults
+defaults:
+    -
+        scope:
+            path: ""
+            type: posts
+        values:
+            layout: post
+            author: Miguel Montes Porras
+            comments: true
+            image: default.png
+    -
+        scope:
+            path: ""
+            type: pages
+        values:
+            layout: page-sidebar
+            showinheader: true
+            showinfooter: true
+    -
+        scope:
+            path: categoria
+            type: pages
+        values:
+            layout: category
+            showinheader: false
+            showinfooter: false
+    -
+        scope:
+            path: ""
+        values:
+            foot: foot.html
+
+# Build settings
+markdown: kramdown
+highlighter: pygments
+excerpt_separator: "<!-- more -->"
+timezone: Europe/Madrid
+permalink: none
+paginate: 5
+paginate_path: "/blog/page/:num"
+exclude:
+    - components
+    - Gemfile
+    - Gemfile.lock
+    - less
+    - LICENSE
+    - node_modules
+    - package.json
+    - README.md

@@ -1,0 +1,16 @@
+{% if site.categories.size > 0 %}
+<div class="block block-categories">
+    <h4>Categorías</h4>
+    <ul class="list-inline">
+        {% for category in site.categories %}
+            {% capture url %}{{ site.baseurl }}/categoria/{{category[0]}}.html{% endcapture %}
+            {% capture label %}
+                <span title="{{ category[1] | size }} {% if category[1].size > 1 %}posts{% else %}post{% endif %}" data-toggle="tooltip" class="tooltip-toggle">
+                    {{ category[0] }}
+                </span>
+            {% endcapture %}
+            {% include nav-item.html url=url label=label %}
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}

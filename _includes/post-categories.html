@@ -1,0 +1,8 @@
+<div class="post-categories">
+    {% for category in include.categories %}
+        <a href="{{ site.baseurl }}/categoria/{{category}}.html" class="badge alert-{% cycle 'info', 'success', 'warning', 'danger' %}" itemprop="articleSection">
+            <span class="fa fa-tag"></span>
+            {{ category }}
+        </a>
+    {% endfor %}
+</div>

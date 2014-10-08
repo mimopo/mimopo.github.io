@@ -1,0 +1,26 @@
+<div class="post-list">
+    {% for post in include.posts %}
+        <article class="media post" itemscope itemtype="http://schema.org/BlogPosting">
+            <a href="{{ post.url | prepend: site.baseurl }}" class="post-link" itemprop="url">
+                <div class="pull-left" href="#">
+                    <div class="media-object">
+                        <img class="post-image" width="110" height="110" src="{{ site.baseurl }}/images/posts/{{ post.image }}" alt="imagen" itemprop="image">
+                        {% include post-date.html date=post.date %}
+                    </div>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading post-title" itemprop="headline">
+                        <span itemprop="name">{{ post.title }}</span>
+                    </h4>
+                    <div class="post-excerpt">
+                        {{ post.excerpt | strip_html }}
+                    </div>
+                    {% include post-author.html author=post.author %}
+                </div>
+            </a>
+        </article>
+        {% if forloop.index < forloop.length %}
+            <hr>
+        {% endif %}
+    {% endfor %}
+</div>
