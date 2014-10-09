@@ -43,6 +43,14 @@ hr {
     .background-gradient();
 }
 
+.navbar-toggle {
+    color: @navbar-default-link-color;
+    &:hover,
+    &:focus {
+        color: @navbar-default-link-hover-color;
+    }
+}
+
 .navbar-brand {
     padding: 10px 15px;
     .logo{
@@ -67,7 +75,6 @@ hr {
 
 .main {
     padding-top: @line-height-computed;
-    margin-bottom: @footer-height;
     padding-bottom: @grid-gutter-width;
     .container {
         background-color: rgba(255, 255, 255, 0.5);
@@ -98,87 +105,102 @@ hr {
 }
 
 
+/* FOOTER */
 
-
-/* TIMELINES */
-
-.github-widget {
-    .fa-stack {
-        color: #171515;
+.footer {
+    color: #00554C;
+    padding: @grid-gutter-width 0;
+    li, a {
+        color: #FFF;
     }
 }
 
-.twitter-widget{
-    .fa-stack {
-        color: rgb(85, 172, 238);
+// FOOTER FIXED
+@media (min-width: @screen-sm-min) {
+    .main {
+        margin-bottom: @footer-height;
     }
-    iframe {
-        width: 100% !important;
+    .footer {
+        height: @footer-height;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
     }
 }
 
-.github-widget {
-    ul {
-        .list-unstyled();
-        margin-bottom: 2px;
-        li {
-            .text-overflow();
-        }
+
+// GO TO NAVBAR
+.goto-navbar {
+    position: fixed;
+    z-index: 3;
+    right: 5px;
+    bottom: 5px;
+    text-align: center;
+    .opacity(.5);
+    .transition(opacity .5s ease-in-out);
+    &, &:hover {
+        color: @text-color;
+        text-decoration: none;
     }
-    .gha-feed {
-        width: 100%;
-        overflow: hidden;
-        text-align: left;
+    &:hover {
+        .opacity(1) !important;
     }
-    .gha-activity {
-        margin: 12px 0 10px 0;
-        &:nth-child(n+6) {
-            display: none;
-        }
+    strong {
+        display: block;
     }
-    .gha-activity-icon {
-        float: left;
-        color: @gray-dark;
-    }
-    .gha-message {
-        margin-left: 20px;
-        > small {
-            display: block;
-            .text-overflow();
-        }
-    }
-    .gha-clear {
-        clear: both;
-    }
-    .gha-time, small {
-        color: @gray;
-        font-size: @font-size-small;
-    }
-    .gha-gravatar-user {
+}
+
+
+/* COOKIES LAW */
+
+.cookies-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    text-align: center;
+    color: #FFF;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, .7);
+    border-top: 1px solid rgba(0, 0, 0, .2);
+    padding: 10px 0;
+    p span {
         display: inline-block;
-        margin-right: 5px;
     }
-    .gha-gravatar-small, .gha-gravatar-commit {
-        .square(16px);
-    }
-    .gha-sha {
-        font-family: @font-family-monospace;
-        color: @gray-dark;
+    a {
+        color: #CECECE;
     }
 }
 
-@media (min-width: @screen-sm-min){
-    .twitter-widget, .github-widget {
-        height: 250px;
-        overflow: auto;
+@media (min-width: @screen-sm-min) {
+    .cookies-banner p {
+        margin-bottom: 0;
     }
-    .twitter-widget iframe {
-        width: 100% !important;
+}
+
+
+.page-politica-de-cookies {
+    .page-header {
+        padding-bottom: 0;
+    }
+    dl {
+        margin-left: @grid-gutter-width / 2;
+        dt {
+            font-weight: @font-weight-base;
+            font-style: italic;
+        }
+        dd {
+            margin-bottom: @line-height-computed / 3;
+        }
     }
 }
 
 
 /* POST */
+
 .post-date {
     .background-gradient();
     padding: 10px;
@@ -249,105 +271,6 @@ hr {
 }
 
 
-/* FOOTER */
-
-.footer {
-    color: #00554C;
-    height: @footer-height;
-    padding: @grid-gutter-width 0;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    li, a {
-        color: #FFF;
-    }
-}
-
-.goto-navbar {
-    position: fixed;
-    z-index: 3;
-    right: 5px;
-    bottom: 5px;
-    text-align: center;
-    .opacity(.5);
-    .transition(opacity .5s ease-in-out);
-    &, &:hover {
-        color: @text-color;
-        text-decoration: none;
-    }
-    &:hover {
-        .opacity(1) !important;
-    }
-    strong {
-        display: block;
-    }
-}
-
-.cookies-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
-    text-align: center;
-    color: #FFF;
-    background-color: #000;
-    background-color: rgba(0, 0, 0, .7);
-    border-top: 1px solid rgba(0, 0, 0, .2);
-    padding: 10px 0;
-    p span {
-        display: inline-block;
-    }
-    a {
-        color: #CECECE;
-    }
-}
-
-@media (min-width: @screen-sm-min) {
-    .cookies-banner p {
-        margin-bottom: 0;
-    }
-}
-
-
-/* COOKIES LAW */
-
-.page-politica-de-cookies {
-    .page-header {
-        padding-bottom: 0;
-    }
-    dl {
-        margin-left: @grid-gutter-width / 2;
-        dt {
-            font-weight: @font-weight-base;
-            font-style: italic;
-        }
-        dd {
-            margin-bottom: @line-height-computed / 3;
-        }
-    }
-}
-
-
-/* DISQUS */
-
-.disqus-container {
-    min-height: 260px;
-}
-
-
-/* GISTS */
-
-.gist {
-    .line, .line-numbers {
-        font-size: @font-size-small;
-        line-height: @line-height-base;
-    }
-}
-
-
 /* SEARCH */
 
 .block-search {
@@ -377,3 +300,5 @@ hr {
 .page-404 .search-form {
     margin-top: @grid-gutter-width;
 }
+
+@import "widgets.less";
