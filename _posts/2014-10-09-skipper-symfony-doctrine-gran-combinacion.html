@@ -1,0 +1,99 @@
+---
+title:      "Skipper + Symfony + Doctrine, gran combinación"
+date:       2014-10-09 20:15:00
+categories: herramientas symfony doctrine
+image:      skipper.png
+---
+
+<blockquote class="text-important">
+    <a href="http://skipper18.com">Skipper</a> es la mejor herramienta que he visto hasta el momento para diseñar
+    modelos de datos y exportarlos a Doctrine 2. Utilizar una herramienta como esta facilita mucho la tarea y evita
+    posibles errores que podríamos cometer escribiendo manualmente las clases.
+</blockquote>
+<!-- more -->
+
+<h3>Multiplataforma y muy configurable</h3>
+<p>
+    Hay dos cosas que me encantan de Skipper, la primera que es multiplataforma y la segunda que es altamente
+    configurable. Aunque desde su interfaz no es posible controlar tantas opciones como me gustaría, tiene un sistema
+    muy potente de <a href="http://help.skipper18.com/en/configuration-files">configuración mediante ficheros XML</a>,
+    ideal para versionar junto al código del bundle o la aplicación que estemos desarrollando. Para los proyectos con
+    Symfony + Doctrine he creado una configuración que podéis ver en <a href="#">este gist</a>.
+</p>
+<p>
+    El fichero <code>.skipper</code> que genera la aplicación es un XML, lo que significa que podemos versionarlo junto
+    al código y con un poco de mañana hacer modificaciones manuales. Útil, por ejemplo, cuando modificamos el nombre de
+    una clase y queremos hacer lo mismo con todas las claves ajenas que apuntan a ella, lo abrimos en el editor de texto
+    y realizamos una operación de sustitución de cadenas.
+</p>
+<p>
+    Skipper soporta la exportación de clases para Doctrine en PHP con anotaciones, YML o XML. En mi caso he optado por
+    PHP con anotaciones. Aunque la exportación funciona perfectamente y respeta el contenido de las clases existentes,
+    es buena práctica asegurarnos de que tenemos correctamente versionado el código para poder volver atrás en caso de
+    cualquier anomalía.
+</p>
+<p>
+    Tras exportar las clases podemos ejecutar en nuestro proyecto Symfony
+    <code>app/console doctrine:generate:entities</code> y sólo nos quedará escribir los validadores y hacer algunos
+    retoques. Esto se podría automatizar utilizando
+</p>
+<p>
+    Por el momento no es posible definir validadores o valores por defecto en
+    <a href="http://www.skipper18.com/en/doctrine2">proyectos Doctrine 2</a>, en mi opinión funciones que evitarían
+    bastante trabajo y que se agradecerían bastante. En cualquier caso es posible contactar con el equipo de desarrollo
+    a través del <a href="http://support.skipper18.com/">foro de soporte</a>, en el que aceptan sugerencias sobre nuevas
+    funcionalidades o mejoras.
+</p>
+
+<h3>Su precio</h3>
+<p>
+    Puedes probar Skipper gratuitamente durante 14 días. Aunque es una herramienta de pago, creo que
+    <a href="http://www.skipper18.com/en/pricing">su precio</a> es más que razonable si tenemos en cuenta la comodidad
+    que aporta y el trabajo que nos puede ahorrar. Además, si haces una review como esta el equipo de Atlantic18 te
+    ofrecerá un jugoso 20% de descuento que no viene nada mal ;) . Si sólo necesitas ver el diagrama de un proyecto sin
+    modificarlo siempre puedes instalar de forma totalmente gratuita el programa en modo visor.
+</p>
+
+<h3>Una &lt;img&gt; vale más que mil palabras</h3>
+<p>
+    A continuación, os dejo unas capturas de pantalla que he tomado del proceso de importación de un proyecto Symfony
+    existente, el resultado obtenido y su posterior exportación.
+</p>
+
+<div id="screenshots" class="row">
+    <div class="col-sm-6 col-md-4">
+        <a href="{{ site.baseurl }}/images/posts/skipper-project-import.png" title="Importar Proyecto" data-gallery="#blueimp-gallery-screenshots" class="thumbnail">
+            <img src="{{ site.baseurl }}/images/posts/skipper-project-import.png" alt="">
+        </a>
+    </div>
+    <div class="col-sm-6 col-md-4">
+        <a href="{{ site.baseurl }}/images/posts/skipper-project-imported.png" title="Proyecto Importado" data-gallery="#blueimp-gallery-screenshots" class="thumbnail">
+            <img src="{{ site.baseurl }}/images/posts/skipper-project-imported.png" alt="">
+        </a>
+    </div>
+    <div class="clearfix visible-sm"></div><!-- really ugly fix -->
+    <div class="col-sm-6 col-md-4">
+        <a href="{{ site.baseurl }}/images/posts/skipper-project.png" title="Proyecto" data-gallery="#blueimp-gallery-screenshots" class="thumbnail">
+            <img src="{{ site.baseurl }}/images/posts/skipper-project.png" alt="">
+        </a>
+    </div>
+    <div class="clearfix visible-md visible-lg"></div><!-- really ugly fix -->
+    <div class="col-sm-6 col-md-4">
+        <a href="{{ site.baseurl }}/images/posts/skipper-project-export.png" title="Exportar Proyecto" data-gallery="#blueimp-gallery-screenshots" class="thumbnail">
+            <img src="{{ site.baseurl }}/images/posts/skipper-project-export.png" alt="">
+        </a>
+    </div>
+    <div class="clearfix visible-sm"></div><!-- really ugly fix -->
+    <div class="col-sm-6 col-md-4">
+        <a href="{{ site.baseurl }}/images/posts/skipper-project-exported.png" title="Proyecto Exportado" data-gallery="#blueimp-gallery-screenshots" class="thumbnail">
+            <img src="{{ site.baseurl }}/images/posts/skipper-project-exported.png" alt="">
+        </a>
+    </div>
+</div>
+
+<p class="text-muted">
+    El modelo de datos pertenece a la aplicación <a href="https://github.com/javiereguiluz/Cupon">"Cupón"</a> que
+    aparece en el libro <a href="http://symfony.es/libro/">"Desarrollo Ágil con Symfony2"</a> de
+    <a href="https://twitter.com/javiereguiluz">Javier Eguiluz</a>, 100% recomendable para todos aquellos que tengáis
+    interés en iniciaros en Symfony 2.
+</p>
