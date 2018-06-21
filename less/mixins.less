@@ -1,7 +1,0 @@
-.background-gradient(@start-color: @brand-primary; @end-color: @gradient-color; @deg: 45deg) {
-    background-color: @start-color;
-    @noise: url('../images/bg-noise.png') repeat;
-    background: @noise, -webkit-linear-gradient(@deg, @start-color, @end-color) repeat-x; // Safari 5.1-6, Chrome 10+
-    background: @noise, -o-linear-gradient(@deg, @start-color, @end-color) repeat-x; // Opera 12
-    background: @noise, linear-gradient(@deg, @start-color, @end-color) repeat-x; // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-}

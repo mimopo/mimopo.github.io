@@ -18,15 +18,6 @@
     Github Pages -- https://pages.github.com/
     CDNjs -- https://cdnjs.com/
     Initializr -- http://www.initializr.com/
-    Modernizr -- http://modernizr.com/
-    jQuery -- http://jquery.com/
-    jQuery Cookie -- https://github.com/carhartl/jquery-cookie
-    ZeroClipboard -- http://zeroclipboard.org/
-    Mustache -- http://mustache.github.io/
     Bootstrap -- http://getbootstrap.com/
     Font Awesome -- http://fortawesome.github.io/Font-Awesome/
-    Blueimp Gallery -- http://blueimp.github.io/Gallery/
-    Github Activity -- https://github.com/caseyscarborough/github-activity
-    Google Analytics -- http://www.google.com/analytics/
-    Google Custom Search -- https://developers.google.com/custom-search/
-    Disqus -- https://disqus.com/
+    
